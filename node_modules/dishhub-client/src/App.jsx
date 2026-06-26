@@ -37,7 +37,7 @@ function App() {
 
   const togglePublish = async (dish) => {
     setMessage('Updating status...');
-    const response = await fetch(`/api/dishes/${dish.dishId}/toggle-publish`, {
+    const response = await fetch(`/api/dishes?dishId=${dish.dishId}`, {
       method: 'PATCH'
     });
     if (response.ok) {
